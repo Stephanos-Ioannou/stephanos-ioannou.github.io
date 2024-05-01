@@ -16,18 +16,30 @@
   }
 }
 
+
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: 'Arial', sans-serif; /* Example font, replace with your choice */
+  background-color: #0d1017; /* Your dark background color */
+  color: #ffff; /* Your text color */
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/* Animation keyframes */
+@keyframes contentSection {
+  from {
+      opacity: 0;
+      transform: translateX(20%);
   }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+.contentSection {
+  animation-name: contentSection;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  width: 100%;
+  flex: 1;
+  flex-direction: row;
 }
