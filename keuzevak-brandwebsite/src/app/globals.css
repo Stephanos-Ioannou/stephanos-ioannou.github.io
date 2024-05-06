@@ -18,28 +18,74 @@
 
 
 body {
-  font-family: 'Arial', sans-serif; /* Example font, replace with your choice */
-  background-color: #0d1017; /* Your dark background color */
-  color: #ffff; /* Your text color */
+  font-family: 'Arial', sans-serif;
+  /* Example font, replace with your choice */
+  background-color: #0d1017;
+  /* Your dark background color */
+  color: #ffff;
+  /* Your text color */
 }
 
-/* Animation keyframes */
-@keyframes contentSection {
+
+.homeContentSection {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.introTextBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 35px;
+  width: 50%;
+}
+
+@keyframes typing {
   from {
-      opacity: 0;
-      transform: translateX(20%);
+    width: 0
+  }
+
+  to {
+    width: 100%
+  }
+}
+
+.NameTitle {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 3s steps(100, end) 1s 1 normal both;
+}
+
+.homeImage{
+  width: 50%;
+  height: 50%;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
   }
   to {
-      opacity: 1;
-      transform: translateX(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-.contentSection {
-  animation-name: contentSection;
-  animation-duration: 0.5s;
-  animation-fill-mode: both;
-  width: 100%;
-  flex: 1;
-  flex-direction: row;
+.fadeInUp {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;  
+}
+
+.h2FadeInUp {
+  animation-delay: 3s; 
+}
+
+.h3FadeInUp {
+  animation-delay: 3.5s; 
 }
