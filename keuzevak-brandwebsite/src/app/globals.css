@@ -26,7 +26,19 @@ body {
   /* Your text color */
 }
 
+/* Global styles.css or App.css */
+.content-animate {
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  will-change: transform, opacity;
+}
 
+.content-exit-active {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+
+/* Home Page */
 .homeContentSection {
   width: 100%;
   display: flex;
@@ -44,12 +56,25 @@ body {
 
 @keyframes typing {
   from {
-    width: 0
+    width: 0;
   }
 
   to {
-    width: 100%
+    width: 100%;
   }
+}
+
+.NameTitle h1:first-child {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 1s steps(100, end) 0.5s 1 normal both;
+}
+
+.NameTitle h1:last-child {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 2s steps(100, end) 2.5s 1 normal both;
+  /* Starts immediately after the first ends */
 }
 
 .NameTitle {
@@ -61,7 +86,7 @@ body {
   animation: typing 3s steps(100, end) 1s 1 normal both;
 }
 
-.homeImage{
+.homeImage {
   width: 50%;
   height: 50%;
 }
@@ -71,6 +96,7 @@ body {
     opacity: 0;
     transform: translateY(50px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -79,13 +105,53 @@ body {
 
 .fadeInUp {
   opacity: 0;
-  animation: fadeInUp 1s ease-out forwards;  
+  animation: fadeInUp 1s ease-out forwards;
 }
 
 .h2FadeInUp {
-  animation-delay: 3s; 
+  animation-delay: 4s;
 }
 
 .h3FadeInUp {
-  animation-delay: 3.5s; 
+  animation-delay: 4.5s;
 }
+
+
+
+.tech-section-container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 20px;
+  width: 100%;
+}
+
+.tech-section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  background-color: #0d1017; /* Match your dark theme */
+}
+
+.logo-list{
+  display: flex;
+  gap: 4rem;
+  flex-direction: row;
+  padding-bottom: 0.75rem;
+}
+.TechIcon {
+  width: 4rem;
+  height: 4rem;
+  transition: filter 0.3s ease, transform 0.3s ease;
+  filter: grayscale(100%);
+  cursor: pointer;
+}
+
+.TechIcon:hover {
+  filter: none;
+  transform: scale(1.2); /* Pop effect on hover */
+  cursor: pointer;
+}
+
