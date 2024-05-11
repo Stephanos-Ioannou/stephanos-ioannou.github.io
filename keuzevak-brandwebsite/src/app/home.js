@@ -1,4 +1,3 @@
-import React from 'react';
 import Image from 'next/image';
 import frontalpicture from '../img/frontcrop.png';
 
@@ -15,7 +14,7 @@ const HomeSection = () => {
                 <h3 className="fadeInUp h3FadeInUp">Stephanos Ioannou, Junior Software Developer from Rotterdam, the Netherlands dedicated to crafting efficient and future-proof software solutions. With a keen interest in modern technologies, I am continuously developing my skills to build innovative and robust applications.</h3>
             </div>
 
-            <Image src={frontalpicture} alt="profile" className="homeImage"></Image>
+            <Image src={frontalpicture} alt="profile" className="w-1/2 h-1/2"></Image>
         </div>
     );
 };

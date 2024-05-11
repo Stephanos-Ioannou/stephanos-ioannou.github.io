@@ -1,14 +1,9 @@
 import {
     siReact, siJavascript, siCss3, siHtml5,
     siNodedotjs, siNpm, siGithub, siCsharp, siDotnet,
-    siTypescript, siPostgresql, siSalesforce, siNextdotjs, siVisualstudiocode
+    siTypescript, siPostgresql, siSalesforce, siNextdotjs, siVisualstudiocode, siWebstorm, siBitbucket
 } from 'simple-icons';
-
-
-const createColoredSvgUrl = (icon, color) => {
-    const modifiedSvg = icon.svg.replace(/<path /g, `<path fill="${color}" `);
-    return `data:image/svg+xml;utf8,${encodeURIComponent(modifiedSvg)}`;
-};
+import createColoredSvgUrl from '@/utils/coloredSvg';
 
 const TechnologyLogoList = ({ technologies }) => {
     return (
@@ -35,22 +30,28 @@ const technologies = {
     ],
     backend: [
         { icon: siNodedotjs, color: '#339933', name: 'Node.js' },
-        { icon: siCsharp, color: '#239120', name: 'C#' },
+        { icon: siCsharp, color: '#512BD4', name: 'C#' },
         { icon: siDotnet, color: '#512BD4', name: '.NET' },
         { icon: siPostgresql, color: '#4169E1', name: 'PostgreSQL' },
         { icon: siTypescript, color: '#3178C6', name: 'TypeScript' },
-        { icon: siSalesforce, color: '#00A1E0', name: 'Salesforce' }
+        { icon: siSalesforce, color: '#00A1E0', name: 'Salesforce' },
     ],
     other: [
         { icon: siNpm, color: '#CB3837', name: 'NPM' },
         { icon: siGithub, color: '#ffffff', name: 'GitHub' },
+        {icon : siBitbucket, color: '#0052CC', name: 'BitBucket'},
         { icon: siVisualstudiocode, color: '#007ACC', name: 'Visual Studio Code' },
+        { icon: siWebstorm, color: '#00C4FF', name: 'WebStorm' }
     ]
 };
 
 const ResumeSection = () => {
     return (
         <div className="tech-section-container">
+            <div>
+                <h1 class="text-2xl font-bold m-0">Tech I Use</h1>
+            </div>
+
             <div className="tech-section" style={{ border: '3px solid white' }}>
                 <h3 className='p-3 italic font-semibold'>Frontend Fundamentals: Tools I Trust</h3>
                 <TechnologyLogoList technologies={technologies.frontend} />

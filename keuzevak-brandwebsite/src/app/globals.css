@@ -26,14 +26,14 @@ body {
   /* Your text color */
 }
 
-/* Global styles.css or App.css */
+
 .content-animate {
-  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  transition: transform 2s ease-in-out, opacity 0.5s ease-in-out;
   will-change: transform, opacity;
 }
 
 .content-exit-active {
-  transform: translateX(-100%);
+  transform: translateX(100%);
   opacity: 0;
 }
 
@@ -53,6 +53,7 @@ body {
   gap: 35px;
   width: 50%;
 }
+
 
 @keyframes typing {
   from {
@@ -86,11 +87,6 @@ body {
   animation: typing 3s steps(100, end) 1s 1 normal both;
 }
 
-.homeImage {
-  width: 50%;
-  height: 50%;
-}
-
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -118,11 +114,14 @@ body {
 
 
 
+
+
+/* Technologies */
 .tech-section-container {
   display: flex;
   flex-direction: column;
-  gap: 50px;
-  padding: 20px;
+  gap: 40px;
+  padding-top: 40px;
   width: 100%;
 }
 
@@ -132,7 +131,6 @@ body {
   flex-direction: column;
   gap: 10px;
   padding: 10px;
-  background-color: #0d1017; /* Match your dark theme */
 }
 
 .logo-list{
@@ -146,12 +144,68 @@ body {
   height: 4rem;
   transition: filter 0.3s ease, transform 0.3s ease;
   filter: grayscale(100%);
-  cursor: pointer;
 }
 
 .TechIcon:hover {
   filter: none;
   transform: scale(1.2); /* Pop effect on hover */
-  cursor: pointer;
 }
 
+
+
+
+
+/* resume */
+.backstory{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  width: 45%;
+  font-style: italic;
+}
+
+.mini-logo-list{
+  display: flex;
+  gap: 2rem;
+  flex-direction: row;
+  padding-bottom: 1rem;
+}
+
+.mini-techIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  filter: grayscale(100%);
+}
+
+.mini-techIcon:hover {
+  transform: scale(1.2); /* Pop effect on hover */
+}
+
+
+.job-entry {
+  transition: transform 0.3s ease;
+}
+
+.JobEntryContainer:hover .job-entry{
+  background-color: rgba(0, 0, 0, 0.1); /* Apply gray modal overlay to all elements */
+  color: #666;
+}
+
+.JobEntryContainer .job-entry:hover{
+  background-color:  #1c222e;
+  color: white;
+  transform: scale(1.01);
+}
+
+/* Ensures all job-entry elements have a consistent grayish look on hover of the container, excluding the one being directly hovered */
+.JobEntryContainer:hover .job-entry img {
+  filter: grayscale(100%); /* Converts the image to grayscale */
+  opacity: 0.5; /* Makes the image semi-transparent to mimic the gray overlay effect */
+}
+
+/* When a specific job-entry is hovered, it returns the images to full color and opacity */
+.JobEntryContainer .job-entry:hover img {
+  filter: none; /* Removes any filters, showing the image in original color */
+  opacity: 1; /* Full opacity for clear visibility */
+}
