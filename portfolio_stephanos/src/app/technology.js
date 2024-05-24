@@ -58,15 +58,15 @@ const TechnologySection = () => {
 
             <div className='flex flex-col mt-8 gap-10'>
                 <div className="tech-section">
-                    <h3 className='p-3 italic font-medium'>Frontend Fundamentals: Tools I Trust</h3>
+                    <h3 className='p-3 italic font-medium mb-1'>Frontend Fundamentals: Tools I Trust</h3>
                     <TechnologyLogoList technologies={technologies.frontend} />
                 </div>
                 <div className="tech-section">
-                    <h3 className='p-3 italic font-medium'>Backend Blueprint: My Essential Building Blocks</h3>
+                    <h3 className='p-3 italic font-medium mb-1'>Backend Blueprint: My Essential Building Blocks</h3>
                     <TechnologyLogoList technologies={technologies.backend} />
                 </div>
                 <div className="tech-section">
-                    <h3 className='p-3 italic font-medium'>Tech Toolkit: My Everyday Essentials</h3>
+                    <h3 className='p-3 italic font-medium mb-1'>Tech Toolkit: My Everyday Essentials</h3>
                     <TechnologyLogoList technologies={technologies.other} />
                 </div>
             </div>

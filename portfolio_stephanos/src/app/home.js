@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import HomeImage from '../../public/AIOFMENOLINES.png';
+import HomeImage from '../../public/AIDrawingcompress.png';
 
 const HomeSection = () => {
     return (
@@ -15,7 +15,7 @@ const HomeSection = () => {
             </div>
 
             <div className="w-full flex justify-center">
-                <Image src={HomeImage} alt="profile"></Image>
+                <Image src={HomeImage} priority={true} alt="Drawing of Stephanos" className=''></Image>
             </div>
         </div>
     );

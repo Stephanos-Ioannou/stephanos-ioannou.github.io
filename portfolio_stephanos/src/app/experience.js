@@ -23,7 +23,7 @@ const jobData = [
         period: "2023 — 2024",
         position: "Full Stack Intership",
         company: "Lizard Global",
-        description: "Developed key features for the staff management application, Aposto, and Lizard Global’s personal website using JavaScript and React. Successfully integrated the website with the sales environment, email, and Google Chat to streamline lead management. Worked in a professional Agile environment, enhancing teamwork and adaptability. Produced a comprehensive data consistency report to guide Aposto’s migration from Firebase to a microservice architecture, recommending optimal solutions for maintaining data integrity.",
+        description: "Developed key features for the staff management application, Aposto, and Lizard Global’s personal website within an agile environment using JavaScript and React. Successfully integrated the website with the sales environment to streamline lead management. Produced a comprehensive data consistency report to guide Aposto’s migration from Firebase to a microservice architecture, recommending optimal solutions for maintaining data integrity.",
         technologies:
             [{ icon: siReact, color: '#61DAFB', name: 'React' },
             { icon: siNextdotjs, color: '#ffffff', name: 'Next.js' },
@@ -57,7 +57,7 @@ const ExperienceSection = () => {
                     <div className="circle"></div>
                 </div>
             </div>
-            <div className="mt-6">
+            <div className="mt-6 flex flex-row">
                 <div className="flex flex-col justify-center gap-4 w-47.5 italic fixed overflow-y-hidden text-sm">
                     <p>Computers have been a natural interest for me as far back as I can remember. I still think fondly of the first time i got invested into coding in high school when I was tasked with creating a 2D platformer. The project was so engaging that I found myself working on it long after school hours, enjoying the freedom in creating the game towards my vision.</p>
                     <p>My Bachelor in informatica exposed me to a wide range of technologies and concepts. I developed a solid foundation in C# and worked on several six-month-long projects, often serving as the Scrum Master or project leader. I got introduced to databases, web development, and other topics such as security, software design, and operating systems.</p>
