@@ -93,7 +93,7 @@ const ExperienceSection = () => {
 
 const JobEntry = ({ period, position, company, link, description, technologies }) => {
     return (
-        <a href={link} target="_blank" className="job-entry shadow-md text-white group">
+        <a href={link} target="_blank" className="job-entry text-white group">
             <div className="flex flex-row m-4">
                 <div className="w-1/4 flex justify-center">
                     <h2 className="text-xs font-medium mt-1">{period}</h2>

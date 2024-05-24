@@ -20,8 +20,9 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #000000;
+  background-color: #0d0d0d;
   color: #ffff;
+  overflow-y: scroll;
 }
 
 .button-hover {
@@ -29,7 +30,7 @@ body {
 }
 
 .button-hover:hover {
-  background-color: var(--green);
+  background-color: #008080;
   transform: rotate(-5deg) scale(1.05); /* Tilt and zoom */
 }
 
@@ -191,12 +192,13 @@ body {
 
 
 .job-entry {
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  will-change: transform, background-color, color; /* Ensures smooth animation */
 }
 
 
 .JobEntryContainer:hover .job-entry{
-  background-color: rgba(0, 0, 0, 0.1); /* Apply gray modal overlay to all elements */
+  background-color: #0d0d0d;
   color: #666;
   
 }
@@ -213,9 +215,10 @@ body {
 }
 
 .JobEntryContainer .job-entry:hover{
-  background-color:  #1a1d26;
+  background-color:  #1a1a1a;
   color: white;
   transform: scale(1.01);
+  text-shadow: none;
 }
 
 /* Ensures all job-entry elements have a consistent grayish look on hover of the container, excluding the one being directly hovered */
