@@ -13,22 +13,48 @@
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
+    --green: #008080;
   }
 }
 
 
 body {
   font-family: 'Arial', sans-serif;
-  /* Example font, replace with your choice */
-  background-color: #0d1017;
-  /* Your dark background color */
+  background-color: #000000;
   color: #ffff;
-  /* Your text color */
 }
 
+.button-hover {
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
 
+.button-hover:hover {
+  background-color: var(--green);
+  transform: rotate(-5deg) scale(1.05); /* Tilt and zoom */
+}
+
+.line{
+  position: relative;
+  margin-top: 1.5rem;
+  width: 8rem; 
+  background-color: #008080;
+  border: 1px solid #008080;
+}
+
+.line .circle {
+  position: absolute;
+  left: -0.25rem; 
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0.5rem; 
+  height: 0.5rem; 
+  border-radius: 9999px; 
+  background-color: #008080;
+  border: 1px solid #008080;
+}
+/* Home Page */
 .content-animate {
-  transition: transform 2s ease-in-out, opacity 0.5s ease-in-out;
+  transition: transform 2s ease-in-out, opacity 0.3s ease-in-out;
   will-change: transform, opacity;
 }
 
@@ -37,23 +63,12 @@ body {
   opacity: 0;
 }
 
-
-/* Home Page */
 .homeContentSection {
   width: 100%;
   display: flex;
   flex-direction: row;
   margin-top: 20px;
 }
-
-.introTextBox {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 35px;
-  width: 50%;
-}
-
 
 @keyframes typing {
   from {
@@ -68,23 +83,21 @@ body {
 .NameTitle h1:first-child {
   overflow: hidden;
   white-space: nowrap;
-  animation: typing 1s steps(100, end) 0.5s 1 normal both;
+  animation: typing 1.75s steps(100, end) 0.75s 1 normal both;
 }
 
 .NameTitle h1:last-child {
   overflow: hidden;
   white-space: nowrap;
-  animation: typing 2s steps(100, end) 2.5s 1 normal both;
-  /* Starts immediately after the first ends */
+  animation: typing 1.75s steps(100, end) 1.75s 1 normal both;
 }
 
 .NameTitle {
+  margin-top: 8rem;
   display: flex;
   flex-direction: column;
-  width: 100%;
   overflow: hidden;
   white-space: nowrap;
-  animation: typing 3s steps(100, end) 1s 1 normal both;
 }
 
 @keyframes fadeInUp {
@@ -105,11 +118,11 @@ body {
 }
 
 .h2FadeInUp {
-  animation-delay: 4s;
+  animation-delay: 3s;
 }
 
 .h3FadeInUp {
-  animation-delay: 4.5s;
+  animation-delay: 3.5s;
 }
 
 
@@ -120,30 +133,43 @@ body {
 .tech-section-container {
   display: flex;
   flex-direction: column;
-  gap: 40px;
-  padding-top: 40px;
   width: 100%;
 }
 
 .tech-section {
   display: flex;
-  align-items: center;
+  align-items: center;  
   flex-direction: column;
   gap: 10px;
   padding: 10px;
+  border: 2px solid white;
 }
 
-.logo-list{
+.logo-list {
   display: flex;
+  flex-wrap: wrap; /* Allow logos to wrap */
   gap: 4rem;
-  flex-direction: row;
+  justify-content: center; /* Center logos */
   padding-bottom: 0.75rem;
 }
+
+@media (max-width: 768px) {
+  .logo-list {
+    gap: 2rem; /* Reduce gap on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-list {
+    gap: 1rem; /* Even smaller gap on very small screens */
+  }
+}
+
 .TechIcon {
-  width: 4rem;
-  height: 4rem;
+  width: 3.5rem;
+  height: 3.5rem;
   transition: filter 0.3s ease, transform 0.3s ease;
-  filter: grayscale(100%);
+  /* filter: grayscale(100%); */
 }
 
 .TechIcon:hover {
@@ -151,31 +177,12 @@ body {
   transform: scale(1.2); /* Pop effect on hover */
 }
 
-
-
-
-
 /* resume */
-.backstory{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 1rem;
-  width: 45%;
-  font-style: italic;
-}
-
-.mini-logo-list{
-  display: flex;
-  gap: 2rem;
-  flex-direction: row;
-  padding-bottom: 1rem;
-}
-
 .mini-techIcon {
   width: 2.5rem;
   height: 2.5rem;
   filter: grayscale(100%);
+  transition: filter 0.3s ease, transform 0.3s ease;
 }
 
 .mini-techIcon:hover {
@@ -187,13 +194,26 @@ body {
   transition: transform 0.3s ease;
 }
 
+
 .JobEntryContainer:hover .job-entry{
   background-color: rgba(0, 0, 0, 0.1); /* Apply gray modal overlay to all elements */
   color: #666;
+  
+}
+
+.JobEntryContainer {
+  /* Hide scrollbar for Webkit browsers */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge, and Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 .JobEntryContainer .job-entry:hover{
-  background-color:  #1c222e;
+  background-color:  #1a1d26;
   color: white;
   transform: scale(1.01);
 }
