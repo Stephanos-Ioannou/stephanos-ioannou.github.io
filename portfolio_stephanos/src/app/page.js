@@ -75,7 +75,7 @@ const NavBar = ({ changeTab }) => (
     </div>
     <a
       href="mailto:ioannoustephanos2002@gmail.com" // Using mailto protocol
-      className="text-sm bg-[#0d0d0d] text-white px-1.5 ml-24 h-8 flex items-center justify-center gap-2 button-hover"
+      className="text-sm bg-[#0d0d0d] text-white px-1.5 ml-20 h-8 flex items-center justify-center gap-2 button-hover"
     >
       <MailFilled />
       ioannoustephanos2002@gmail.com
