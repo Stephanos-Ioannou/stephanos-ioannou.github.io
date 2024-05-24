@@ -180,8 +180,8 @@ body {
 
 /* resume */
 .mini-techIcon {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.45rem;
+  height: 2.45rem;
   filter: grayscale(100%);
   transition: filter 0.3s ease, transform 0.3s ease;
 }
