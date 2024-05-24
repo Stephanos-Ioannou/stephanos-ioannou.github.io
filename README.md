@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Personal Portfolio Website
 
-## Getting Started
+Welcome to my personal portfolio website! This project showcases my skills, projects, and experiences in web development, built using Next.js and React.
 
-First, run the development server:
+## Table of Contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [Introduction](#introduction)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contact](#contact)
+
+## Introduction
+
+This portfolio website is designed to provide an overview of my professional background, highlight my projects, and share my skills with potential employers and collaborators. It features a clean, responsive design that looks great on both desktop and mobile devices.
+
+## Technologies Used
+
+- **Next.js:** A React framework for server-side rendering and generating static websites.
+- **React:** A JavaScript library for building user interfaces.
+- **Tailwind CSS:** A utility-first CSS framework for rapidly building custom designs.
+- **Ant Design:** A Javascript component library 
+- **Vercel:** Hosting platform for deployment.
+
+## Installation
+
+To run this project locally, follow these steps:
+
+1. **Clone the repository:**
+
+    ```bash
+    git clone https://github.com/yourusername/portfolio-website.git
+    cd portfolio-website
+    ```
+
+2. **Install dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+3. **Run the development server:**
+
+    ```bash
+    npm run dev
+    ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Usage
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+To customize this portfolio for your own use, you can modify the content in the following files:
 
-## Learn More
+- **`/pages/page.js`**: Main landing page content.
+- **`/components/experience.js`**: professional background showcase.
+- **`/components/technologies.js`**: list of technologies.
 
-To learn more about Next.js, take a look at the following resources:
+## Contact
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+If you have any questions or suggestions, feel free to reach out to me:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- **Email:** ioannoustephanos2002@gmail.com
+- **LinkedIn:** www.linkedin.com/in/stephanos-ioannou-a6b41a25b/
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Thank you for visiting my portfolio website!
