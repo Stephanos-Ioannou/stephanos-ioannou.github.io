@@ -1,6 +1,6 @@
 import createColoredSvgUrl from "../utils/coloredSvg";
 import {
-    siReact, siJavascript, siHtml5, siCss3, siGithub, siSalesforce,
+    siReact, siJavascript, siSass, siGithub, siSalesforce,
     siNextdotjs, siWebstorm, siPython, siCsharp, siDotnet, siBitbucket
 } from 'simple-icons';
 import { ArrowUpOutlined } from "@ant-design/icons";
@@ -10,12 +10,12 @@ const jobData = [
         period: "2024 — Present",
         position: "Junior Software Developer",
         company: "Nextue",
-        description: "Further developed a tailored Salesforce application for an insurance company, optimizing their workflow and data management processes. Successfully integrated various features to meet the specific needs of the insurance sector, enhancing efficiency and user experience.",
+        description: "Further developed a tailored Salesforce application for an insurance company, adding and changing features to the client's wish. Successfully integrated various features to meet the specific needs of the insurance sector, improving user experience.",
         technologies:
             [{ icon: siSalesforce, color: '#00A1E0', name: 'Salesforce' },
+            { iconUrl: 'https://static-00.iconduck.com/assets.00/java-icon-378x512-w60vlu77.png', name: 'Java' },
             { icon: siJavascript, color: '#F7DF1E', name: 'JavaScript' },
             { icon: siWebstorm, color: '#00C4FF', name: 'WebStorm' },
-            { icon: siHtml5, color: '#E34F26', name: 'HTML5' },
             { icon: siBitbucket, color: '#0052CC', name: 'BitBucket' }],
         link: "https://www.linkedin.com/company/nextue/?originalSubdomain=nl"
     },
@@ -23,13 +23,14 @@ const jobData = [
         period: "2023 — 2024",
         position: "Full Stack Intership",
         company: "Lizard Global",
-        description: "Developed key features for the staff management application, Aposto, and Lizard Global’s personal website within an agile environment using JavaScript and React. Successfully integrated the website with the sales environment to streamline lead management. Produced a comprehensive data consistency report to guide Aposto’s migration from Firebase to a microservice architecture, recommending optimal solutions for maintaining data integrity.",
+        description: `
+        Developed features for staff management application Aposto and Lizard Global’s personal website within an agile environment using JavaScript and React. <p>Successfully reintegrated Lizard’s personal website with their sales application to streamline the sales process. Wrote an advisory report on maintaining data consistency for Aposto’s migration from Firebase to a microservice architecture. </p>`,
         technologies:
             [{ icon: siReact, color: '#61DAFB', name: 'React' },
             { icon: siNextdotjs, color: '#ffffff', name: 'Next.js' },
             { icon: siJavascript, color: '#F7DF1E', name: 'JavaScript' },
             { icon: siGithub, color: '#ffffff', name: 'GitHub' },
-            { icon: siCss3, color: '#1572B6', name: 'CSS3' },
+            { icon: siSass, color: '#CC6699', name: 'Sass' },
             ],
         link: "https://www.lizard.global/nl"
     },
@@ -101,13 +102,14 @@ const JobEntry = ({ period, position, company, link, description, technologies }
                 <div className="flex flex-col w-3/4 gap-4">
                     <h3 className="text-l font-bold">{position} · {company}  <ArrowUpOutlined className="pl-1 transform rotate-45 transition-transform group-hover:-translate-y-1.5 group-hover:translate-x-1.5" />
                     </h3>
-                    <p className="text-sm">{description}</p>
+                    <p className="text-sm" dangerouslySetInnerHTML={{ __html: description }}></p>
                     <MiniTechnologyLogoList technologies={technologies} />
                 </div>
             </div>
         </a>
     );
 };
+
 
 const MiniTechnologyLogoList = ({ technologies }) => {
     return (
@@ -116,7 +118,7 @@ const MiniTechnologyLogoList = ({ technologies }) => {
                 <img
                     key={tech.name}
                     className="mini-techIcon"
-                    src={createColoredSvgUrl(tech.icon, tech.color)}
+                    src={tech.iconUrl ? tech.iconUrl : createColoredSvgUrl(tech.icon, tech.color)}
                     alt={`${tech.name} Logo`}
                 />
             ))}

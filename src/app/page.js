@@ -44,7 +44,7 @@ export default function App() {
 
   return (
     <div className="p-20 bg-[#0d0d0d] flex justify-center items-center">
-      <div className="xl:w-2/3 lg:w-3/4 p-6 shadow-2xl flex flex-col justify-center">
+      <div className="w-3/4 p-6 shadow-2xl flex flex-col justify-center">
         <div className="flex flex-col">
           <NavBar changeTab={changeTab} />
 
