@@ -18,7 +18,7 @@
         </div>
         <h2>Junior Software Developer</h2>
         <h3>
-          Junior Software Developer from Rotterdam, the Netherlands.
+          Building software that solves real-world problems from Rotterdam, the Netherlands.
         </h3>
       </section>
 
@@ -30,9 +30,15 @@
     <section class="about-section">
       <h2 class="section-title">About Me</h2>
       <div class="about-content">
-        <p>Software has been a natural interest for me as far back as I can remember. I still think fondly of the first time i got invested in coding during high school when i was tasked with creating a 2D platformer, working on it long after school hours to bring my vision to life.</p>
-        <p>My Bachelor in Informatica gave me a solid foundation in C# and exposed me to databases, web development, security and software design. I worked on several six-month projects, often as Scrum Master or project leader.</p>
-        <p>When I'm not programming, I'm usually playing piano at local jam sessions or working out at the gym.</p>
+        <p>
+          Software has been a natural interest of mine for as long as I can remember. I still think fondly of the first time I got truly invested in coding during high school, when I was tasked with creating a 2D platformer. I ended up working on it long after school hours, enjoying the creative freedom it gave me.
+        </p>
+        <p>
+          My Bachelor's in Informatica gave me a solid foundation in C# and introduced me to topics like databases, web development, software design, and security. I led multiple six-month projects, often taking the role of Scrum Master or project lead.
+        </p>
+        <p>
+          Outside of programming, I enjoy playing piano at local jam sessions and staying active at the gym.
+        </p>
         <p><em>– Stephanos</em></p>
       </div>
     </section>
@@ -183,33 +189,40 @@
   <script>
     // Intersection Observer implementation
     document.addEventListener('DOMContentLoaded', function() {
-      // Select all elements that should be animated
-      const animatedElements = document.querySelectorAll('.experience-section .section-title, .experience-card, .about-section .section-title, .about-content');
+      // Set up animation targets
+      const animationTargets = {
+        sectionTitles: document.querySelectorAll('.section-title'),
+        contentElements: document.querySelectorAll('.experience-card, .about-content, .tech-group')
+      };
       
-      // Add animation order as a custom property
-      const experienceCards = document.querySelectorAll('.experience-card');
-      experienceCards.forEach((card, index) => {
-        card.style.setProperty('--animation-order', index + 1);
+      // Set animation order for sequential elements
+      const sequentialElements = {
+        cards: document.querySelectorAll('.experience-card'),
+        techGroups: document.querySelectorAll('.tech-group')
+      };
+      
+      // Apply animation order to sequential elements
+      Object.values(sequentialElements).forEach(collection => {
+        collection.forEach((element, index) => {
+          element.style.setProperty('--animation-order', index + 1);
+        });
       });
 
-      // Create an observer
-      const observer = new IntersectionObserver((entries) => {
+      // Create a single observer for all elements
+      const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
-          // If the element is visible
           if (entry.isIntersecting) {
-            // Add the visible class
             entry.target.classList.add('visible');
-            // Stop observing it
             observer.unobserve(entry.target);
           }
         });
       }, {
-        rootMargin: '-10px 0px', // Slightly before elements come into view
-        threshold: 0.1 // Trigger when 10% of the element is visible
+        rootMargin: '-10px 0px',
+        threshold: 0.1
       });
 
-      // Observe each element
-      animatedElements.forEach(element => {
+      // Observe all elements that need animation
+      [...animationTargets.sectionTitles, ...animationTargets.contentElements].forEach(element => {
         observer.observe(element);
       });
     });
