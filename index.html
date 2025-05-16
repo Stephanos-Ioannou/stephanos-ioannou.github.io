@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Stephanos Ioannou</title>
-  <link rel="icon" href="assets/icon.ico" />  <!-- Added favicon -->
+  <link rel="icon" href="assets/icon.ico" />
   <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css" />
   <link rel="stylesheet" href="custom.css" />
 </head>
@@ -193,13 +193,15 @@
       // Set up animation targets
       const animationTargets = {
         sectionTitles: document.querySelectorAll('.section-title'),
-        contentElements: document.querySelectorAll('.experience-card, .about-content, .tech-group')
+        contentElements: document.querySelectorAll('.experience-card, .about-content, .tech-group, .contact-section p'),
+        contactElements: document.querySelectorAll('.social-buttons, .cv-button-container')
       };
       
       // Set animation order for sequential elements
       const sequentialElements = {
         cards: document.querySelectorAll('.experience-card'),
-        techGroups: document.querySelectorAll('.tech-group')
+        techGroups: document.querySelectorAll('.tech-group'),
+        contactElements: document.querySelectorAll('.contact-section p, .social-buttons, .cv-button-container')
       };
       
       // Apply animation order to sequential elements
@@ -223,7 +225,7 @@
       });
 
       // Observe all elements that need animation
-      [...animationTargets.sectionTitles, ...animationTargets.contentElements].forEach(element => {
+      [...animationTargets.sectionTitles, ...animationTargets.contentElements, ...animationTargets.contactElements].forEach(element => {
         observer.observe(element);
       });
     });

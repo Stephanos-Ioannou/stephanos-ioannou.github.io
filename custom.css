@@ -141,13 +141,15 @@ h3 {
 }
 
 /* Scroll-based animations for content elements */
-.section-title, .experience-card, .about-content, .tech-group {
+.section-title, .experience-card, .about-content, .tech-group, 
+.contact-section p, .social-buttons, .cv-button-container {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity var(--transition-standard), transform var(--transition-standard);
 }
 
-.section-title.visible, .experience-card.visible, .about-content.visible, .tech-group.visible {
+.section-title.visible, .experience-card.visible, .about-content.visible, .tech-group.visible,
+.contact-section p.visible, .social-buttons.visible, .cv-button-container.visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -183,6 +185,10 @@ h3 {
 
 .about-content {
   transition-delay: 200ms;
+}
+
+.contact-section p, .social-buttons, .cv-button-container {
+  transition-delay: calc(var(--animation-order, 0) * 200ms);
 }
 
 .experience-header {
