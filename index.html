@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,6 +10,23 @@
 </head>
 <body>
   <main class="home-container">
+    <!-- Language toggle button -->
+    <div class="language-toggle">
+      <button id="languageToggle" class="lang-button">
+        <span class="current-lang">
+          <img src="https://cdn.jsdelivr.net/gh/lipis/flag-icon-css@3.5.0/flags/4x3/nl.svg" alt="NL Flag" width="24" height="18">
+        </span>
+        <span class="arrow">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 1 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+          </svg>
+        </span>
+        <span class="target-lang">
+          <img src="https://cdn.jsdelivr.net/gh/lipis/flag-icon-css@3.5.0/flags/4x3/gb.svg" alt="EN Flag" width="24" height="18">
+        </span>
+      </button>
+    </div>
+
     <div class="profile-wrapper">
       <section class="text-section">
         <div class="NameTitle">
@@ -30,16 +47,21 @@
     <section class="about-section">
       <h2 class="section-title">About Me</h2>
       <div class="about-content">
-        <p>
-          Software has been a natural interest of mine for as long as I can remember. I still think fondly of the first time I got truly invested in coding during high school, when I was tasked with creating a 2D platformer. I ended up working on it long after school hours, enjoying the creative freedom it gave me.
-        </p>
-        <p>
-          My Bachelor's in Informatica gave me a solid foundation in C# and introduced me to topics like databases, web development, software design, and security. I led multiple six-month projects, often taking the role of Scrum Master or project lead.
-        </p>
-        <p>
-          Outside of programming, I enjoy playing piano at local jam sessions and staying active at the gym.
-        </p>
-        <p><em>– Stephanos</em></p>
+        <div class="about-text">
+          <p>
+            Software has been a natural interest of mine for as long as I can remember. I still think fondly of the first time I got truly invested in coding during high school, when I was tasked with creating a 2D platformer. I ended up working on it long after school hours, enjoying the creative freedom it gave me.
+          </p>
+          <p>
+            My Bachelor's in Informatica gave me a solid foundation in C# and introduced me to topics like databases, web development, software design, and security. I led multiple six-month projects, often taking the role of Scrum Master or project lead.
+          </p>
+          <p>
+            Outside of programming, I enjoy playing piano at local jam sessions and staying active at the gym.
+          </p>
+          <p><em>– Stephanos</em></p>
+        </div>
+        <div class="about-portrait">
+          <img src="assets/portrait.jpeg" alt="Portrait of Stephanos Ioannou" />
+        </div>
       </div>
     </section>
 
@@ -187,48 +209,6 @@
     </section>
   </main>
 
-  <script>
-    // Intersection Observer implementation
-    document.addEventListener('DOMContentLoaded', function() {
-      // Set up animation targets
-      const animationTargets = {
-        sectionTitles: document.querySelectorAll('.section-title'),
-        contentElements: document.querySelectorAll('.experience-card, .about-content, .tech-group, .contact-section p'),
-        contactElements: document.querySelectorAll('.social-buttons, .cv-button-container')
-      };
-      
-      // Set animation order for sequential elements
-      const sequentialElements = {
-        cards: document.querySelectorAll('.experience-card'),
-        techGroups: document.querySelectorAll('.tech-group'),
-        contactElements: document.querySelectorAll('.contact-section p, .social-buttons, .cv-button-container')
-      };
-      
-      // Apply animation order to sequential elements
-      Object.values(sequentialElements).forEach(collection => {
-        collection.forEach((element, index) => {
-          element.style.setProperty('--animation-order', index + 1);
-        });
-      });
-
-      // Create a single observer for all elements
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, {
-        rootMargin: '-10px 0px',
-        threshold: 0.1
-      });
-
-      // Observe all elements that need animation
-      [...animationTargets.sectionTitles, ...animationTargets.contentElements, ...animationTargets.contactElements].forEach(element => {
-        observer.observe(element);
-      });
-    });
-  </script>
+  <script src="custom.js"></script>
 </body>
 </html>
